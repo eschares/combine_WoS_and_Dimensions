@@ -7,7 +7,7 @@ Analyzing metadata on scholarly outputs often requires a data export from one or
 Each has their own pros and cons.
 
 ### Web of Science
-Includes a critical data point (Corresponding Author, or in Web of Science terms, Reprint Author), but excludes entire journals through its indexing criteria.
+Includes a critical data point (Corresponding Author, or in Web of Science terms, Reprint Author), but excludes entire journals through its restrictive indexing criteria.
 
 Good data, but by definition, incomplete
 
