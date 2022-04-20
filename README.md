@@ -22,11 +22,11 @@ This project attempts to combine the strengths of both these databases and arriv
 
 ## Export Data to Use Here
 
-From Web of Science, select
+From Web of Science, select Export -> Excel -> Records from: 1 to XXX -> Full Record (important to get the Reprint Author fields included)
 
-From Dimensions, select
+From Dimensions, select Save/Export -> Export Results -> Export Full Record
 
-## Flow is:
+## This script will:
 ### Read in **Web of Science** export file
 - Keep only a subset of the columns
 - Filter down to only certain Document Types ("Article" or "Review" (but not "Book Review"))
