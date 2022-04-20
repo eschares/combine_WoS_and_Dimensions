@@ -12,7 +12,7 @@ Includes a critical data point (Corresponding Author, or in Web of Science terms
 Good data on each record, but by definition, incomplete number of records
 
 ### Dimensions
-Indexes much more widely and includes records from many more journals than Web of Science, but does not provide the critical Corresponding Author data in each record
+Indexes much more widely and includes records from many more journals than Web of Science, but does not provide the critical Corresponding Author data
 
 More records, but each record has less data
 
