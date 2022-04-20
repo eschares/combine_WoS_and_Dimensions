@@ -1,6 +1,8 @@
 # combine_WoS_and_Dimensions
 This script takes in a Web of Science export and a Dimensions export file, de-duplicates records, enchances Dimensions data, then combines them into one file
 
+<img src="merge.png" width=500>
+
 # Problem
 Analyzing metadata on scholarly outputs often requires a data export from one or more bibliographic databases. 
 
