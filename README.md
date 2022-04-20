@@ -9,7 +9,7 @@ Each has their own pros and cons.
 ### Web of Science
 Includes a critical data point (Corresponding Author, or in Web of Science terms, Reprint Author), but excludes entire journals through its restrictive indexing criteria.
 
-Good data, but by definition, incomplete
+Good data on each record, but by definition, incomplete number of records
 
 ### Dimensions
 Indexes much more widely and includes records from many more journals than Web of Science, but does not provide the critical Corresponding Author data in each record
