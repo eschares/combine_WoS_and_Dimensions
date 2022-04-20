@@ -20,11 +20,38 @@ More records, but each record has less data
 
 This project attempts to combine the strengths of both these databases and arrive at a more complete picture of output (typically from an institution and/or with a specific publisher)
 
-## Export
+## Export Data to Use Here
 
 From Web of Science, select
 
 From Dimensions, select
 
-Flow is:
-- Read in Web of Science export
+## Flow is:
+### Read in **Web of Science** export file
+- Keep only a subset of the columns
+- Filter down to only certain Document Types ("Article" or "Review" (but not "Book Review"))
+- Filter down to Iowa State University Corresponding Authors (CA)
+- - key off "Email Address" and "Reprint Address" columns
+- Save off records with ISU CA and without ISU CA
+- - Recommended to manually investigate records without ISU CA to make sure you're not missing something
+
+### Read in **Dimensions** export file
+- Keep only some columns
+- Rename those columns to match WoS naming convention
+- Filter down to only the "Article" document type
+- - Document types defined for Dimensions from Crossref, lots of other garbage gets through here like Editorials, Corrections, Cover Pictures, etc. Use with care
+- Use "DOI" column to check which DOIs we already have from Web of Science
+- Save off new DOIs, present only in Dimensions export file
+
+### Enrich Dimensions data
+- The biggest weakness of Dimensions is that it provides no information on the Corresponding Author of each paper
+- Use the "Addresses" column to look at affiliations of each author
+- If all authors are from Iowa State University, then by definition the CA will be from ISU (I just can't tell *which* author it is)
+
+### Combine
+- Combine WoS data with Dimensions data using `pd.concat`
+- Drop duplicate Article Titles, sometimes the same article can have two unique DOIs (preprint, International edition, etc)
+
+### Next Steps
+- Will still need to manually investigate those Dimensions records where the CA could not be determined
+- Use DOI column to load the landing page of each, find CA and record
