@@ -55,6 +55,7 @@ From Dimensions, select Save/Export -> Export Results -> Export Full Record
 ### Combine
 - Combine WoS data with Dimensions data using `pd.concat`
 - Drop duplicate Article Titles, sometimes the same article can have two unique DOIs (preprint, International edition, etc)
+- Flags possible non-Article types: Editorials, Letters, Cover Photos, etc to look at in more depth
 
 ## Next Steps / Future work
 - Will still need to manually investigate those Dimensions records where the CA could not be determined
