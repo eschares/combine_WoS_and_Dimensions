@@ -9,9 +9,12 @@ clean them up and merge them into one file
 
 Use WoS data first, preferred, has Corresponding Author information on nearly all records
 Filter down to valid document types, then ISU CAs
+Save both with and without ISU CAs
+Manually look at without to see if anything obvious we missed
 
 Look at Dimensions data, keep only DOIs we don't already know about from the WoS file
 Dimensions doesn't give CA data, have to look those up manually
+But first, look at addresses - if all authors from ISU, then it must be an ISU CA (but don't know which author)
 """
 
 import pandas as pd
@@ -130,14 +133,23 @@ if not dim.empty:
     wos_and_dim['Article Title Cleaned'] = wos_and_dim['Article Title'].str.lower().str.replace('-','').str.replace('_','').str.replace('‐','')
     wos_and_dim = wos_and_dim.drop_duplicates(subset=['Article Title Cleaned'], keep='first')
     print("Combined records: ", wos_and_dim.shape[0])
+    
+    sus_terms = ['editorial', 'retract', 'erratum', 'letter', 'reply', 'letter to the editor', "editors' notes", 'front cover', 'cover feature', 'cover photo', 'cover picture','isbn']
+    wos_and_dim['Suspicious'] = wos_and_dim['Article Title Cleaned'].apply(lambda x: 1 if any (i in x for i in sus_terms) else 0)
+    
     wos_and_dim.to_csv("allWoS_and_newDim_combined.csv", index=False, encoding='utf-8-sig')
+
 
     
     if not wos_and_dim.empty:
         print('\n### Analyzing combined WoS and Dim file ###')
-        print('Combined records: ', wos_and_dim.shape[0])
+        print(f'Combined records: {wos_and_dim.shape[0]}')
+        print(f"Possible non-articles included (Editorials, Letters, etc): {wos_and_dim['Suspicious'].sum()}")
     
     
 
 #ToDo:
-#add support for a third file, Paid Wiley
+#add support for a third file, Paid Wiley, will be messier data, can put anything in the title field
+#figure out exporting as input, csv or Excel, will mess up the encoding
+#put article title and doi drop_duplicates into a function, figure out how that works
+#You might want to check the following: Editorial, Retraction, Cover Photo
