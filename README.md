@@ -28,6 +28,8 @@ From Web of Science, select Export -> Excel -> Records from: 1 to XXX -> Full Re
 
 From Dimensions, select Save/Export -> Export Results -> Export Full Record
 
+## Next, change lines 24 and 27 to point to the data
+
 ## Then, this script will:
 ### Read in **Web of Science** export file
 - Keep only a subset of the columns
