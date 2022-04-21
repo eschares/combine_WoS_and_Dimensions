@@ -22,9 +22,9 @@ More records, but each record has less data
 
 This project attempts to combine the strengths of both these databases and arrive at a more complete picture of output (typically from an institution and/or with a specific publisher)
 
-## First, Export Your Data
+## First, Export Data
 
-From Web of Science, select Export -> Excel -> Records from: 1 to XXX -> Full Record (important to get the Reprint Author fields included)
+From Web of Science, select Export -> Excel -> Records from: 1 to XXX -> Full Record (includes the Reprint Author fields). Note the limit is 1000 per export, so you may need to do this multiple times and combine files.
 
 From Dimensions, select Save/Export -> Export Results -> Export Full Record
 
