@@ -30,8 +30,9 @@ From Web of Science, select Export -> Excel -> Records from: 1 to XXX -> Full Re
 
 From Dimensions, select Save/Export -> Export Results -> Export Full Record
 
-## Next, change lines 28 and 31 to point to your data
-## Also modify lines 65-68 to look for evidence of Corresponding Authors from your institution (currently set to Iowa State)
+## Next, modify the code for your own local use
+- Change lines 28 and 31 to point to your data
+- Also modify lines 65-68 to look for evidence of Corresponding Authors from your institution (currently set to Iowa State)
 
 ## Then, this script will:
 ### Read in **Web of Science** export file
