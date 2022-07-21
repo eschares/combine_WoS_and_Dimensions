@@ -4,6 +4,7 @@ This script takes in a Web of Science export and a Dimensions export file, de-du
 <img src="merge.png" width=500>
 
 # Problem
+Want to understand an institution's publishing activity (often looking at one particular publisher).
 Analyzing metadata on scholarly outputs often requires a data export from one or more bibliographic databases. 
 
 Each has their own pros and cons.
