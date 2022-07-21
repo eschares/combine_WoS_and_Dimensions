@@ -28,14 +28,15 @@ From Web of Science, select Export -> Excel -> Records from: 1 to XXX -> Full Re
 
 From Dimensions, select Save/Export -> Export Results -> Export Full Record
 
-## Next, change lines 24 and 27 to point to the data
+## Next, change lines 28 and 31 to point to your data
+## Also modify lines 65-68 to look for evidence of Corresponding Authors from your institution (currently set to Iowa State)
 
 ## Then, this script will:
 ### Read in **Web of Science** export file
 - Keep only a subset of the columns
 - Filter down to only certain Document Types ("Article" or "Review" (but not "Book Review"))
 - Filter down to Iowa State University Corresponding Authors (CA)
-- - key off "Email Address" and "Reprint Address" columns
+- - keys off "Email Address" and "Reprint Address" columns
 - Save off records with ISU CA and without ISU CA
 - - Recommended to manually investigate records without ISU CA to make sure you're not missing something
 
@@ -48,7 +49,7 @@ From Dimensions, select Save/Export -> Export Results -> Export Full Record
 - Save off new DOIs, present only in Dimensions export file
 
 ### Enrich Dimensions data
-- The biggest weakness of Dimensions is that it provides no information on the Corresponding Author of each paper
+- The **biggest weakness** of Dimensions is that it doesn't always provide information on the Corresponding Author of each paper
 - Use the "Addresses" column to look at affiliations of each author
 - If all authors are from Iowa State University, then by definition the CA will be from ISU (I just can't tell *which* author it is)
 
@@ -60,3 +61,4 @@ From Dimensions, select Save/Export -> Export Results -> Export Full Record
 ## Next Steps / Future work
 - Will still need to manually investigate those Dimensions records where the CA could not be determined
 - Use DOI column to load the landing page of each, find CA and record
+- Would be nice to use the WoS and Dimensions APIs to get the data instead of the manual exporting to Excel sheets
